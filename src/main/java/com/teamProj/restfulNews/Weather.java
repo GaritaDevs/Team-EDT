@@ -10,7 +10,7 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.util.List;
 
-@Path("/greetings/{name}")
+@Path("/current/{location}")
 public class Weather {
     // The Java method will process HTTP GET requests
     @GET
