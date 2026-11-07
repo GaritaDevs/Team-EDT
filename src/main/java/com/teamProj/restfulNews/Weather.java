@@ -16,7 +16,7 @@ public class Weather {
     @GET
     // The Java method will produce content identified by the MIME Media types "text/plain", "application/json", or "text/html"
     @Produces({"text/plain", "application/json", "text/html"})
-    public Response getWeather(@PathParam("location") String name, @Context HttpHeaders headers) {
+    public Response getWeather(@PathParam("location") String location, @Context HttpHeaders headers) {
         //New code here
 
 
