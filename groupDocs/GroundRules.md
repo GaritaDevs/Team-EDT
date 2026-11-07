@@ -1,3 +1,14 @@
+# Ground rules
+
+* Open Communication
+* Treat everyone with respect
+* Time efficiency
+* Acknowledge each person's work
+
+
+
+
+--------
 If you aren't sure what to include, search for "ground rules for software development teams".  Be sure to include items like:
 
 1. Branching strategy, code review and pull request strategy - consider creating a [contribution guidelines document](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/setting-guidelines-for-repository-contributors).

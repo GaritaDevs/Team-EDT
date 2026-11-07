@@ -1,7 +1,21 @@
-### Background
+# Team: EDT
 
-Each of you has a unique array of talents, skills and experiences to offer your team. When working in teams, it is important to understand what each person brings to the group. This way, you will be able to leverage each of your individual talents, skills and experiences for the good of the group.
+### Dameyune Taylor:
+#### Background
+A Software developer student with experience building Java-based web applications, several frameworks and experienced in working collaboratively with Git/GitHub using Agile practices. Has experience managing teams through various jobs over the years.
 
+#### Education 
+Highest - Verona area highschool
+
+Current - Madison Area Technical college
+#### Personal
+* Has one dog named Coffee
+* Plays guitar, video games, and watches movies in their free time
+
+
+
+
+--------------------
 ### Purpose
 
 Creating a team resume provides you with an opportunity to get to know your teammates and gain an understanding of the wide array of talents, skills and experiences each of you can bring to your group.
