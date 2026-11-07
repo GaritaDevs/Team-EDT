@@ -16,11 +16,15 @@ public class Weather {
     @GET
     // The Java method will produce content identified by the MIME Media types "text/plain", "application/json", or "text/html"
     @Produces({"text/plain", "application/json", "text/html"})
-    public Response getMessage(@PathParam("name") String name, @Context HttpHeaders headers) {
-        List<MediaType> acceptableMediaTypes = headers.getAcceptableMediaTypes();
+    public Response getWeather(@PathParam("location") String name, @Context HttpHeaders headers) {
+        //New code here
+
+
+        //Old code, for reference
         String baseMessage = "Hello, " + name + "!";
         String output = baseMessage;
 
+        List<MediaType> acceptableMediaTypes = headers.getAcceptableMediaTypes();
         for (MediaType type : acceptableMediaTypes) {
             if (type.isCompatible(MediaType.APPLICATION_JSON_TYPE)) {
                 output = "{\"message\": \"" + baseMessage + "\"}";
