@@ -11,7 +11,7 @@ import javax.ws.rs.core.Response;
 import java.util.List;
 
 @Path("/greetings/{name}")
-public class HelloWorld {
+public class Weather {
     // The Java method will process HTTP GET requests
     @GET
     // The Java method will produce content identified by the MIME Media types "text/plain", "application/json", or "text/html"
