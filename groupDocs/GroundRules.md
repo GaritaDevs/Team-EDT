@@ -4,6 +4,9 @@
 * Treat everyone with respect
 * Time efficiency
 * Acknowledge each person's work
+* We will meet once or twice a week on MS Teams
+
+
 
 ----------------------
 
