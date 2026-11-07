@@ -31,7 +31,7 @@
       <artifactId>jersey-hk2</artifactId>
       <version>${jersey-version}</version>
     </dependency>
-    <!-- For consuming api web service -->
+    <!-- For mapping json to objects -->
     <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core -->
     <dependency>
       <groupId>com.fasterxml.jackson.core</groupId>
