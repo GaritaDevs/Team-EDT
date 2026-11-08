@@ -6,7 +6,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 //Defines the base URI for all resource URIs.
-@ApplicationPath("/weather") //You may want to add a value here so that all traffic isn't routed to the class below.
+@ApplicationPath("/api") //You may want to add a value here so that all traffic isn't routed to the class below.
 
 //The java class declares root resource and provider classes
 public class WeatherApplication extends Application {
