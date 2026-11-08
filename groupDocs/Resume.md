@@ -12,6 +12,20 @@ Current - Madison Area Technical college
 * Has one dog named Coffee
 * Plays guitar, video games, and watches movies in their free time
 
+### Esteban Garita:
+#### Background
+Web Developer with a passion for building high-quality, innovative solutions that solve real-world business challenges. Detail-oriented and adaptable, eager to collaborate in dynamic environments. 
+Experienced in evaluating digital content and identifying accessibility barriers that affect users with disabilities
+
+#### Education
+Highest - CENFOTEC Front-End diploma
+
+Current - Madison Area Technical college
+#### Personal
+* I like to travel a lot
+* Plays soccer, tennis and like nature
+
+
 
 
 
