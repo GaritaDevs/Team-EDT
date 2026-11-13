@@ -6,6 +6,7 @@ Following is one possible format for your team project plan. Feel free to use an
 - [ ] Each team member read the Team Project instructions and related Teams Posts
 - [ ] Each team member complete the Week 9 exercise
 - [ ] As a group, communicate through Teams to schedule first meeting
+- [ ] Create and manage Project Plan (Tim Hamilton will lead this)
 - [ ] Create Team Resume (Taylor Dameyune will lead this)
 - [ ] Create Ground Rules (Taylor Dameyune will lead this)
 - [ ] Create Team Repository (Esteban Garita will lead this)
@@ -18,17 +19,25 @@ Following is one possible format for your team project plan. Feel free to use an
 
 ## Week 10
 
-- [ ] 
-
+- [ ] Tim Hamilton will extract POJOs from the json response from weatherapi.com
+- [ ] Tim Hamilton will complete skeleton of functional api
+- [ ] Esteban Garita will complete the jsp page for displaying weather data
+- [ ] Esteban Garita will complete weather controller servlet
+- [ ] Esteban Garita will complete unit testing for functional api
+- [ ] Taylor Dameyune will complete unit testing for entities
+- [ ] Taylor Dameyune will complete user documentation for functional api
 
 ## Week 11
 
-
-
+- [ ] Taylor Dameyune will incorporate css to jsp pages
+- [ ] Taylor Dameyune will deploy project to aws if necessary
+- [ ] Esteban Garita will complete unit testing for PropertiesLoader
+- [ ] Esteban Garita will complete unit testing for weather api integration
+- [ ] Esteban Garita will add javadocs
+- [ ] Tim Hamilton will manage updates to the Project Plan
+- [ ] Tim Hamilton will add resume info to team resume
+- [ ] Tim Hamilton will open issue for Team Checkpoint
 
 ## Week 12
 
-## Notes
- - I worked on extracting Entities from json, and still have to work on the project plan
- - EstebanL servlet jsp work, properties loader testing, weather api integration testing (testing the key), javadocs, 
- - DTaylor unit testing, and css, (deployed to aws?), user documentation
+- [ ]
