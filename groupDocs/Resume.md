@@ -25,8 +25,17 @@ Current - Madison Area Technical college
 * I like to travel a lot
 * Plays soccer, tennis and like nature
 
+### Tim Hamilton:
+#### Background
+Returning student looking for a change in career, pursuing interests in front and back end coding.  Meticulous, focus-driven, and always ready to learn more.  
 
+#### Education
+Highest - James B. Conant High School, Hoffman Estates, Illinois
 
+Current - Madison Area Technical college
+#### Personal
+* Huge fan of games of all sorts (Boards, Cards, Paper/Books, Video, etc.)
+* Favorite game is Magic: The Gathering, which inspired me to pursue this line of work.
 
 
 --------------------
