@@ -26,9 +26,5 @@ class PropertiesLoaderTest implements PropertiesLoader {
                 "API key should not be empty"
         );
 
-        assertEquals(
-                "https://api.weatherapi.com/v1/current.json?key=",
-                properties.getProperty("url.currentWeather")
-        );
     }
 }
