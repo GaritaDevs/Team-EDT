@@ -6,8 +6,14 @@ import java.util.Properties;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * The type Properties loader test.
+ */
 class PropertiesLoaderTest implements PropertiesLoader {
 
+    /**
+     * Test load weather api properties.
+     */
     @Test
     void testLoadWeatherApiProperties() {
 

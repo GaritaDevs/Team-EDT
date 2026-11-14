@@ -5,6 +5,9 @@ import javax.ws.rs.core.Application;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * The type Weather application.
+ */
 //Defines the base URI for all resource URIs.
 @ApplicationPath("/api") //You may want to add a value here so that all traffic isn't routed to the class below.
 

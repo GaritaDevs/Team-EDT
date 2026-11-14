@@ -16,8 +16,16 @@ import java.util.Properties;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * The type Weather api integration test.
+ */
 class WeatherApiIntegrationTest implements PropertiesLoader {
 
+    /**
+     * Test get current weather.
+     *
+     * @throws Exception the exception
+     */
     @Test
     void testGetCurrentWeather() throws Exception {
 

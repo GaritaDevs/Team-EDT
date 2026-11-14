@@ -20,19 +20,56 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
+/**
+ * The type Weather.
+ */
 @Path("/current/{location}")
 public class Weather implements PropertiesLoader {
+    /**
+     * The Properties.
+     */
     Properties properties;
+    /**
+     * The Weather api key.
+     */
     String weatherApiKey;
+    /**
+     * The Weather api url.
+     */
     String weatherApiUrl;
+    /**
+     * The City.
+     */
     static String city;
+    /**
+     * The State.
+     */
     static String state;
+    /**
+     * The Temp f.
+     */
     static String tempF;
+    /**
+     * The Temp c.
+     */
     static String tempC;
+    /**
+     * The Wind mph.
+     */
     static String windMph;
+    /**
+     * The Wind kph.
+     */
     static String windKph;
 
-    // The Java method will process HTTP GET requests
+    /**
+     * Gets weather.
+     *
+     * @param location the location
+     * @param headers  the headers
+     * @return the weather
+     */
+// The Java method will process HTTP GET requests
     @GET
     // The Java method will produce content identified by the MIME Media types "text/plain", "application/json", or "text/html"
     @Produces({"text/plain", "application/json", "text/html"})
@@ -85,6 +122,9 @@ public class Weather implements PropertiesLoader {
         return Response.status(200).type(MediaType.TEXT_PLAIN).entity(textOutput).build();
     }
 
+    /**
+     * Assign properties.
+     */
     public void assignProperties() {
         try {
             properties = loadProperties("/weatherapi.properties");
@@ -99,6 +139,11 @@ public class Weather implements PropertiesLoader {
         }
     }
 
+    /**
+     * Convert weather to html string.
+     *
+     * @return the string
+     */
     public static String convertWeatherToHtml() {
         // I've left this as a StringBuilder, despite IntelliJ saying it could just be a String
         // because I anticipate that this could be longer and more complex eventually.
@@ -132,6 +177,11 @@ public class Weather implements PropertiesLoader {
         return page.toString();
     }
 
+    /**
+     * Convert weather to plain text string.
+     *
+     * @return the string
+     */
     public static String convertWeatherToPlainText() {
         // I've left this as a StringBuilder, despite IntelliJ saying it could just be a String
         // because I anticipate that this could be longer and more complex eventually.
