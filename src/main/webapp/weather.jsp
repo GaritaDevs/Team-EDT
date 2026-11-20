@@ -74,6 +74,11 @@
       ${weather.current.windDir}
   </p>
 
+  <p>
+    <Strong>Recommended Attire:</Strong>
+    ${attireSuggestion}
+  </p>
+
 </c:if>
 
 </body>
