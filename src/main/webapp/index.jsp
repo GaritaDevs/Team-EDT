@@ -51,7 +51,7 @@
         <td><code>{location}</code></td>
         <td>String</td>
         <td>5-digit US ZIP code.</td>
-        <td>60601</td>
+        <td>53704</td>
     </tr>
     </tbody>
 </table>
@@ -71,43 +71,43 @@
         <td>GET</td>
         <td><code>/api/current/{location}</code></td>
         <td>Returns the complete current weather and location payload.</td>
-        <td><a href="${pageContext.request.contextPath}/api/current/60601" target="_blank">Try in New Tab</a></td>
+        <td><a href="${pageContext.request.contextPath}/api/current/53704" target="_blank">Open in New Tab</a></td>
     </tr>
     <tr>
         <td>GET</td>
         <td><code>/api/current/{location}/location</code></td>
         <td>Returns geographic coordinates, region, country, and local time.</td>
-        <td><a href="${pageContext.request.contextPath}/api/current/60601/location" target="_blank">Try in New Tab</a></td>
+        <td><a href="${pageContext.request.contextPath}/api/current/53704/location" target="_blank">Open in New Tab</a></td>
     </tr>
     <tr>
         <td>GET</td>
         <td><code>/api/current/{location}/temperature</code></td>
         <td>Returns Fahrenheit/Celsius temperatures, feels-like temp, humidity, and condition text.</td>
-        <td><a href="${pageContext.request.contextPath}/api/current/60601/temperature" target="_blank">Try in New Tab</a></td>
+        <td><a href="${pageContext.request.contextPath}/api/current/53704/temperature" target="_blank">Open in New Tab</a></td>
     </tr>
     <tr>
         <td>GET</td>
         <td><code>/api/current/{location}/wind</code></td>
         <td>Returns wind speed (MPH/KPH), direction, gusts, and precipitation.</td>
-        <td><a href="${pageContext.request.contextPath}/api/current/60601/wind" target="_blank">Try in New Tab</a></td>
+        <td><a href="${pageContext.request.contextPath}/api/current/53704/wind" target="_blank">Open in New Tab</a></td>
     </tr>
     <tr>
         <td>GET</td>
         <td><code>/api/current/{location}/attire</code></td>
         <td>Returns a weather summary alongside clothing recommendations based on feels-like temperature and conditions.</td>
-        <td><a href="${pageContext.request.contextPath}/api/current/60601/attire" target="_blank">Try in New Tab</a></td>
+        <td><a href="${pageContext.request.contextPath}/api/current/53704/attire" target="_blank">Open in New Tab</a></td>
     </tr>
     </tbody>
 </table>
 
 <h2>Example Request &amp; Response</h2>
 <h3>Request</h3>
-<pre>GET ${pageContext.request.contextPath}/api/current/60601/attire
+<pre>GET ${pageContext.request.contextPath}/api/current/53704/attire
 Accept: application/json</pre>
 
 <h3>Success Response (<code>200 OK</code>)</h3>
 <pre>{
-  "location": "Chicago",
+  "location": "Madison",
   "temp_f": 42.0,
   "condition": "Light rain",
   "attire_suggestion": "Warm jacket or coat, long pants, and closed-toe shoes.  Bring an umbrella or rain jacket."
