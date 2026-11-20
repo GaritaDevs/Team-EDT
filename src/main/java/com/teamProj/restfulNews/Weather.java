@@ -21,45 +21,36 @@ import java.util.Map;
  */
 @Path("/current/{location}")
 public class Weather {
+    private final WeatherDao dao = new WeatherDao();
+    private final WeatherService service = new WeatherService();
+
+    @PathParam("location")
+    private String location;
 
     /**
      * 1. Full weather report supporting JSON.
      * URL: GET /Team-EDT/api/current/{location}
      *
-     * @param location the location
-     * @return the weather
+     * @return the full weather report
      */
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public Response getWeather(@PathParam("location") String location) {
-        WeatherDao dao = new WeatherDao();
-        CurrentWeather currentWeather = dao.getWeather(location);
-
-        if (currentWeather == null) {
-            return notFoundResponse(location);
-        }
-
-        return toJsonResponse(currentWeather);
+    public Response getWeather() {
+        return toJsonResponse(getValidWeatherData());
     }
 
     /**
      * 2. Returns ONLY geographic & time info for the location.
      * URL: GET /Team-EDT/api/current/{location}/location
      *
-     * @param location the location
      * @return the location only
      */
     @GET
     @Path("/location")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response getLocationOnly(@PathParam("location") String location) {
-        WeatherDao dao = new WeatherDao();
-        CurrentWeather weather = dao.getWeather(location);
-        if (weather == null || weather.getLocation() == null) {
-            return notFoundResponse(location);
-        }
+    public Response getLocationOnly() {
 
-        Location loc = weather.getLocation();
+        Location loc = getValidWeatherData().getLocation();
         Map<String, Object> result = new LinkedHashMap<>();
         result.put("name", loc.getName());
         result.put("region", loc.getRegion());
@@ -75,20 +66,14 @@ public class Weather {
      * 3. Returns ONLY temperature & condition details.
      * URL: GET /Team-EDT/api/current/{location}/temperature
      *
-     * @param location the location
      * @return the temperature only
      */
     @GET
     @Path("/temperature")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response getTemperatureOnly(@PathParam("location") String location) {
-        WeatherDao dao = new WeatherDao();
-        CurrentWeather weather = dao.getWeather(location);
-        if (weather == null || weather.getCurrent() == null) {
-            return notFoundResponse(location);
-        }
+    public Response getTemperatureOnly() {
 
-        Current current = weather.getCurrent();
+        Current current = getValidWeatherData().getCurrent();
         Map<String, Object> result = new LinkedHashMap<>();
         result.put("temp_f", current.getTempF());
         result.put("temp_c", current.getTempC());
@@ -104,26 +89,43 @@ public class Weather {
      * 4. Returns ONLY wind & precipitation info.
      * URL: GET /Team-EDT/api/current/{location}/wind
      *
-     * @param location the location
      * @return the wind only
      */
     @GET
     @Path("/wind")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response getWindOnly(@PathParam("location") String location) {
-        WeatherDao dao = new WeatherDao();
-        CurrentWeather weather = dao.getWeather(location);
-        if (weather == null || weather.getCurrent() == null) {
-            return notFoundResponse(location);
-        }
+    public Response getWindOnly() {
 
-        Current current = weather.getCurrent();
+        Current current = getValidWeatherData().getCurrent();
         Map<String, Object> result = new LinkedHashMap<>();
         result.put("wind_mph", current.getWindMph());
         result.put("wind_kph", current.getWindKph());
         result.put("wind_dir", current.getWindDir());
         result.put("gust_mph", current.getGustMph());
         result.put("precip_in", current.getPrecipIn());
+
+        return toJsonResponse(result);
+    }
+
+    /**
+     * 5. Returns temp_f, condition, and suggestion for attire based on temp_f and condition
+     * URL: GET /Team-EDT/api/current/{location}/attire
+     *
+     * @return attire suggestion
+     */
+    @GET
+    @Path("/attire")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response getAttire() {
+
+        CurrentWeather weather = getValidWeatherData();
+        String suggestion = service.getAttireSuggestion(weather);
+
+        Map<String, Object> result = new LinkedHashMap<>();
+        result.put("location", weather.getLocation() != null ? weather.getLocation().getName() : location);
+        result.put("temp_f", weather.getCurrent().getTempF());
+        result.put("condition", weather.getCurrent().getCondition() != null ? weather.getCurrent().getCondition().getText() : "Unknown");
+        result.put("attire_suggestion", suggestion);
 
         return toJsonResponse(result);
     }
@@ -150,5 +152,17 @@ public class Weather {
                 .type(MediaType.APPLICATION_JSON)
                 .entity("{\"error\": \"Weather data not found for location: " + location + "\"}")
                 .build();
+    }
+
+    /**
+     * Helper method to return either a valid CurrentWeather object, or throw an exception
+     * @return validated CurrentWeather object
+     */
+    private CurrentWeather getValidWeatherData() {
+        CurrentWeather weather = dao.getWeather(location);
+        if (weather == null || weather.getLocation() == null || weather.getCurrent() == null) {
+            throw new javax.ws.rs.WebApplicationException(notFoundResponse(location));
+        }
+        return weather;
     }
 }
