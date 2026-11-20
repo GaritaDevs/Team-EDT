@@ -15,7 +15,7 @@
 * Team members will communicate and coordinate progress through Microsoft Teams.
 * Once a task is completed, the member will commit and push their changes to their respective branch.
 
-- Pull Requests and Code Review
+- -----Pull Requests and Code Review-----
 
 * Once changes are pushed, the team member will create a Pull Request (PR) to merge their branch into the main branch.
 * At least one other team member must review the changes before they are merged.
