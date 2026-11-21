@@ -21,9 +21,9 @@ Following is one possible format for your team project plan. Feel free to use an
 
 - [ ] Tim Hamilton will extract POJOs from the json response from weatherapi.com
 - [ ] Tim Hamilton will complete skeleton of functional api
-- [X] Esteban Garita will complete the jsp page for displaying weather data
-- [X] Esteban Garita will complete weather controller servlet
-- [X] Esteban Garita will complete unit testing for functional api
+- [ ] Esteban Garita will complete the jsp page for displaying weather data
+- [ ] Esteban Garita will complete weather controller servlet
+- [ ] Esteban Garita will complete unit testing for functional api
 - [ ] Taylor Dameyune will complete unit testing for entities
 - [ ] Taylor Dameyune will complete user documentation for functional api
 
@@ -31,9 +31,9 @@ Following is one possible format for your team project plan. Feel free to use an
 
 - [ ] Taylor Dameyune will incorporate css to jsp pages
 - [ ] Taylor Dameyune will deploy project to aws if necessary
-- [X] Esteban Garita will complete unit testing for PropertiesLoader
-- [X] Esteban Garita will complete unit testing for weather api integration
-- [X] Esteban Garita will add javadocs
+- [ ] Esteban Garita will complete unit testing for PropertiesLoader
+- [ ] Esteban Garita will complete unit testing for weather api integration
+- [ ] Esteban Garita will add javadocs
 - [ ] Tim Hamilton will manage updates to the Project Plan
 - [ ] Tim Hamilton will add resume info to team resume
 - [ ] Tim Hamilton will open issue for Team Checkpoint
