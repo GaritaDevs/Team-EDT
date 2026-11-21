@@ -40,4 +40,4 @@ Following is one possible format for your team project plan. Feel free to use an
 
 ## Week 12
 
-- [ ]
+- [ ] Tim Hamilton will build the user documentation, but will not use any tech to do so (except brainstorming help from Google).
