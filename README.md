@@ -13,5 +13,4 @@ Instead, our API evaluates live meteorological factors — such as feels-like te
 
 - Weather API: https://teams.public.onecdn.static.microsoft/evergreen-assets/safelinks/2/atp-safelinks.html
 - Dependency Management: Maven
-- Design: CSS and Boostrap
 
