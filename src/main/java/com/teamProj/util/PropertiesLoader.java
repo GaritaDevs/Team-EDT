@@ -10,7 +10,7 @@ import java.util.Properties;
 public interface PropertiesLoader {
 
     /**
-     * Load properties properties.
+     * Load properties.
      *
      * @param propertiesFilePath the properties file path
      * @return the properties

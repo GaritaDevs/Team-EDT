@@ -3,6 +3,8 @@ package com.teamProj.persistence;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.teamProj.entity.CurrentWeather;
 import com.teamProj.util.PropertiesLoader;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 
 import java.net.URI;
@@ -15,6 +17,7 @@ import java.util.Properties;
  * The type Weather dao.
  */
 public class WeatherDao implements PropertiesLoader {
+    private final Logger logger = LogManager.getLogger(this.getClass());
     private Properties properties;
     private String weatherApiKey;
     private String weatherApiUrl;
@@ -28,9 +31,9 @@ public class WeatherDao implements PropertiesLoader {
             weatherApiKey = properties.getProperty("key");
             weatherApiUrl = properties.getProperty("url.currentWeather");
         } catch (Exception e) {
-            System.out.println("Failed to load weather properties in WeatherDao: " + e.getMessage());
-            e.printStackTrace();
+            logger.error("Failed to load weather properties in WeatherDao: " + e.getMessage());
         }
+        logger.info("Weather API Key: " + weatherApiKey + ", API URL: " + weatherApiUrl);
     }
 
     /**
@@ -55,13 +58,12 @@ public class WeatherDao implements PropertiesLoader {
             if (response.statusCode() == 200) {
                 currentWeather = mapper.readValue(response.body(), CurrentWeather.class);
             } else {
-                System.out.println("Failed to fetch weather. Status code: " + response.statusCode());
+                logger.error("Failed to get current weather for location: " + location + ", Status Code: " + response.statusCode());
             }
         } catch (Exception e) {
-            System.out.println("Exception occurred while fetching weather data: " + e.getMessage());
-            e.printStackTrace();
+            logger.error("Exception occurred while fetching weather data: " + e.getMessage());
         }
-
+        logger.info("Current Weather: " + currentWeather);
         return currentWeather;
     }
 }

@@ -6,6 +6,7 @@ import com.teamProj.entity.CurrentWeather;
 public class WeatherService {
 
     public String getAttireSuggestion(CurrentWeather weather) {
+
         if (weather == null || weather.getCurrent() == null) {
             return "No weather data available to suggest attire.";
         }

@@ -13,6 +13,7 @@ import java.io.IOException;
 
 @WebServlet(urlPatterns = {"/weather"})
 public class WeatherServlet extends HttpServlet {
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String location = req.getParameter("location");
@@ -28,7 +29,7 @@ public class WeatherServlet extends HttpServlet {
                 req.setAttribute("weather", weather);
                 req.setAttribute("attireSuggestion", attireSuggestion);
             } else {
-                req.setAttribute("error", "Could not retrieve weather data for ZIP code: " + location);
+                req.setAttribute("error","Could not retrieve weather data for ZIP code: " + location);
             }
         }
 
