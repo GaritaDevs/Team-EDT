@@ -19,13 +19,13 @@ import java.util.Map;
 /**
  * The type Weather Resource providing multiple GET endpoints.
  */
-@Path("/current/{location}")
+@Path("/current/{zipcode}")
 public class Weather {
     private final WeatherDao dao = new WeatherDao();
     private final WeatherService service = new WeatherService();
 
-    @PathParam("location")
-    private String location;
+    @PathParam("zipcode")
+    private String zipCode;
 
     /**
      * 1. Full weather report supporting JSON.
@@ -122,7 +122,7 @@ public class Weather {
         String suggestion = service.getAttireSuggestion(weather);
 
         Map<String, Object> result = new LinkedHashMap<>();
-        result.put("location", weather.getLocation() != null ? weather.getLocation().getName() : location);
+        result.put("zip_code", weather.getLocation() != null ? weather.getLocation().getName() : zipCode);
         result.put("temp_f", weather.getCurrent().getTempF());
         result.put("condition", weather.getCurrent().getCondition() != null ? weather.getCurrent().getCondition().getText() : "Unknown");
         result.put("attire_suggestion", suggestion);
@@ -159,9 +159,9 @@ public class Weather {
      * @return validated CurrentWeather object
      */
     private CurrentWeather getValidWeatherData() {
-        CurrentWeather weather = dao.getWeather(location);
+        CurrentWeather weather = dao.getWeather(zipCode);
         if (weather == null || weather.getLocation() == null || weather.getCurrent() == null) {
-            throw new javax.ws.rs.WebApplicationException(notFoundResponse(location));
+            throw new javax.ws.rs.WebApplicationException(notFoundResponse(zipCode));
         }
         return weather;
     }
