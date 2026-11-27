@@ -27,7 +27,6 @@
 
 <div>
     <strong>Base URL:</strong> <code>${pageContext.request.contextPath}/api</code><br>
-    <strong>Interactive Web Client:</strong> <a href="weather.jsp" target="_blank">Launch Weather &amp; Attire Web App in New Tab</a>
 </div>
 
 <h2>Authentication &amp; Headers</h2>
