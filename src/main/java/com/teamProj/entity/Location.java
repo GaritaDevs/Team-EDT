@@ -20,13 +20,13 @@ public class Location{
 	private String name;
 
 	@JsonProperty("lon")
-	private Object lon;
+	private Double lon;
 
 	@JsonProperty("region")
 	private String region;
 
 	@JsonProperty("lat")
-	private Object lat;
+	private Double lat;
 
 	@JsonProperty("tz_id")
 	private String tzId;
@@ -108,7 +108,7 @@ public class Location{
 	 *
 	 * @param lon the lon
 	 */
-	public void setLon(Object lon){
+	public void setLon(Double lon){
 		this.lon = lon;
 	}
 
@@ -144,7 +144,7 @@ public class Location{
 	 *
 	 * @param lat the lat
 	 */
-	public void setLat(Object lat){
+	public void setLat(Double lat){
 		this.lat = lat;
 	}
 
