@@ -8,103 +8,103 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class Current{
 
 	@JsonProperty("feelslike_c")
-	private Object feelslikeC;
+	private double feelslikeC;
 
 	@JsonProperty("wetbulb_f")
-	private Object wetbulbF;
+	private double wetbulbF;
 
 	@JsonProperty("feelslike_f")
-	private Object feelslikeF;
+	private double feelslikeF;
 
 	@JsonProperty("wind_degree")
 	private int windDegree;
 
 	@JsonProperty("wetbulb_c")
-	private Object wetbulbC;
+	private double wetbulbC;
 
 	@JsonProperty("windchill_f")
-	private Object windchillF;
+	private double windchillF;
 
 	@JsonProperty("windchill_c")
-	private Object windchillC;
+	private double windchillC;
 
 	@JsonProperty("last_updated_epoch")
 	private int lastUpdatedEpoch;
 
 	@JsonProperty("temp_c")
-	private Object tempC;
+	private double tempC;
 
 	@JsonProperty("temp_f")
-	private Object tempF;
+	private double tempF;
 
 	@JsonProperty("cloud")
 	private int cloud;
 
 	@JsonProperty("wind_kph")
-	private Object windKph;
+	private double windKph;
 
 	@JsonProperty("wind_mph")
-	private Object windMph;
+	private double windMph;
 
 	@JsonProperty("humidity")
 	private int humidity;
 
 	@JsonProperty("dewpoint_f")
-	private Object dewpointF;
+	private double dewpointF;
 
 	@JsonProperty("gti")
-	private Object gti;
+	private double gti;
 
 	@JsonProperty("dni")
-	private Object dni;
+	private double dni;
 
 	@JsonProperty("will_it_rain")
 	private int willItRain;
 
 	@JsonProperty("uv")
-	private Object uv;
+	private double uv;
 
 	@JsonProperty("last_updated")
 	private String lastUpdated;
 
 	@JsonProperty("heatindex_f")
-	private Object heatindexF;
+	private double heatindexF;
 
 	@JsonProperty("dewpoint_c")
-	private Object dewpointC;
+	private double dewpointC;
 
 	@JsonProperty("diff_rad")
-	private Object diffRad;
+	private double diffRad;
 
 	@JsonProperty("is_day")
 	private int isDay;
 
 	@JsonProperty("precip_in")
-	private Object precipIn;
+	private double precipIn;
 
 	@JsonProperty("heatindex_c")
-	private Object heatindexC;
+	private double heatindexC;
 
 	@JsonProperty("wind_dir")
 	private String windDir;
 
 	@JsonProperty("gust_mph")
-	private Object gustMph;
+	private double gustMph;
 
 	@JsonProperty("pressure_in")
-	private Object pressureIn;
+	private double pressureIn;
 
 	@JsonProperty("gust_kph")
-	private Object gustKph;
+	private double gustKph;
 
 	@JsonProperty("chance_of_rain")
 	private int chanceOfRain;
 
 	@JsonProperty("precip_mm")
-	private Object precipMm;
+	private double precipMm;
 
 	@JsonProperty("short_rad")
-	private Object shortRad;
+	private double shortRad;
 
 	@JsonProperty("condition")
 	private Condition condition;
@@ -113,32 +113,32 @@ public class Current{
 	private int willItSnow;
 
 	@JsonProperty("vis_km")
-	private Object visKm;
+	private double visKm;
 
 	@JsonProperty("chance_of_snow")
 	private int chanceOfSnow;
 
 	@JsonProperty("pressure_mb")
-	private Object pressureMb;
+	private double pressureMb;
 
 	@JsonProperty("vis_miles")
-	private Object visMiles;
+	private double visMiles;
 
 	/**
 	 * Set feelslike c.
 	 *
 	 * @param feelslikeC the feelslike c
 	 */
-	public void setFeelslikeC(Object feelslikeC){
+	public void setFeelslikeC(double feelslikeC){
 		this.feelslikeC = feelslikeC;
 	}
 
 	/**
-	 * Get feelslike c object.
+	 * Get feelslike c double.
 	 *
-	 * @return the object
+	 * @return the double
 	 */
-	public Object getFeelslikeC(){
+	public double getFeelslikeC(){
 		return feelslikeC;
 	}
 
@@ -147,16 +147,16 @@ public class Current{
 	 *
 	 * @param wetbulbF the wetbulb f
 	 */
-	public void setWetbulbF(Object wetbulbF){
+	public void setWetbulbF(double wetbulbF){
 		this.wetbulbF = wetbulbF;
 	}
 
 	/**
-	 * Get wetbulb f object.
+	 * Get wetbulb f double.
 	 *
-	 * @return the object
+	 * @return the double
 	 */
-	public Object getWetbulbF(){
+	public double getWetbulbF(){
 		return wetbulbF;
 	}
 
@@ -165,16 +165,16 @@ public class Current{
 	 *
 	 * @param feelslikeF the feelslike f
 	 */
-	public void setFeelslikeF(Object feelslikeF){
+	public void setFeelslikeF(double feelslikeF){
 		this.feelslikeF = feelslikeF;
 	}
 
 	/**
-	 * Get feelslike f object.
+	 * Get feelslike f double.
 	 *
-	 * @return the object
+	 * @return the double
 	 */
-	public Object getFeelslikeF(){
+	public double getFeelslikeF(){
 		return feelslikeF;
 	}
 
@@ -201,16 +201,16 @@ public class Current{
 	 *
 	 * @param wetbulbC the wetbulb c
 	 */
-	public void setWetbulbC(Object wetbulbC){
+	public void setWetbulbC(double wetbulbC){
 		this.wetbulbC = wetbulbC;
 	}
 
 	/**
-	 * Get wetbulb c object.
+	 * Get wetbulb c double.
 	 *
-	 * @return the object
+	 * @return the double
 	 */
-	public Object getWetbulbC(){
+	public double getWetbulbC(){
 		return wetbulbC;
 	}
 
@@ -219,16 +219,16 @@ public class Current{
 	 *
 	 * @param windchillF the windchill f
 	 */
-	public void setWindchillF(Object windchillF){
+	public void setWindchillF(double windchillF){
 		this.windchillF = windchillF;
 	}
 
 	/**
-	 * Get windchill f object.
+	 * Get windchill f double.
 	 *
-	 * @return the object
+	 * @return the double
 	 */
-	public Object getWindchillF(){
+	public double getWindchillF(){
 		return windchillF;
 	}
 
@@ -237,16 +237,16 @@ public class Current{
 	 *
 	 * @param windchillC the windchill c
 	 */
-	public void setWindchillC(Object windchillC){
+	public void setWindchillC(double windchillC){
 		this.windchillC = windchillC;
 	}
 
 	/**
-	 * Get windchill c object.
+	 * Get windchill c double.
 	 *
-	 * @return the object
+	 * @return the double
 	 */
-	public Object getWindchillC(){
+	public double getWindchillC(){
 		return windchillC;
 	}
 
@@ -273,16 +273,16 @@ public class Current{
 	 *
 	 * @param tempC the temp c
 	 */
-	public void setTempC(Object tempC){
+	public void setTempC(double tempC){
 		this.tempC = tempC;
 	}
 
 	/**
-	 * Get temp c object.
+	 * Get temp c double.
 	 *
-	 * @return the object
+	 * @return the double
 	 */
-	public Object getTempC(){
+	public double getTempC(){
 		return tempC;
 	}
 
@@ -291,16 +291,16 @@ public class Current{
 	 *
 	 * @param tempF the temp f
 	 */
-	public void setTempF(Object tempF){
+	public void setTempF(double tempF){
 		this.tempF = tempF;
 	}
 
 	/**
-	 * Get temp f object.
+	 * Get temp f double.
 	 *
-	 * @return the object
+	 * @return the double
 	 */
-	public Object getTempF(){
+	public double getTempF(){
 		return tempF;
 	}
 
@@ -327,16 +327,16 @@ public class Current{
 	 *
 	 * @param windKph the wind kph
 	 */
-	public void setWindKph(Object windKph){
+	public void setWindKph(double windKph){
 		this.windKph = windKph;
 	}
 
 	/**
-	 * Get wind kph object.
+	 * Get wind kph double.
 	 *
-	 * @return the object
+	 * @return the double
 	 */
-	public Object getWindKph(){
+	public double getWindKph(){
 		return windKph;
 	}
 
@@ -345,16 +345,16 @@ public class Current{
 	 *
 	 * @param windMph the wind mph
 	 */
-	public void setWindMph(Object windMph){
+	public void setWindMph(double windMph){
 		this.windMph = windMph;
 	}
 
 	/**
-	 * Get wind mph object.
+	 * Get wind mph double.
 	 *
-	 * @return the object
+	 * @return the double
 	 */
-	public Object getWindMph(){
+	public double getWindMph(){
 		return windMph;
 	}
 
@@ -381,16 +381,16 @@ public class Current{
 	 *
 	 * @param dewpointF the dewpoint f
 	 */
-	public void setDewpointF(Object dewpointF){
+	public void setDewpointF(double dewpointF){
 		this.dewpointF = dewpointF;
 	}
 
 	/**
-	 * Get dewpoint f object.
+	 * Get dewpoint f double.
 	 *
-	 * @return the object
+	 * @return the double
 	 */
-	public Object getDewpointF(){
+	public double getDewpointF(){
 		return dewpointF;
 	}
 
@@ -399,16 +399,16 @@ public class Current{
 	 *
 	 * @param gti the gti
 	 */
-	public void setGti(Object gti){
+	public void setGti(double gti){
 		this.gti = gti;
 	}
 
 	/**
-	 * Get gti object.
+	 * Get gti double.
 	 *
-	 * @return the object
+	 * @return the double
 	 */
-	public Object getGti(){
+	public double getGti(){
 		return gti;
 	}
 
@@ -417,16 +417,16 @@ public class Current{
 	 *
 	 * @param dni the dni
 	 */
-	public void setDni(Object dni){
+	public void setDni(double dni){
 		this.dni = dni;
 	}
 
 	/**
-	 * Get dni object.
+	 * Get dni double.
 	 *
-	 * @return the object
+	 * @return the double
 	 */
-	public Object getDni(){
+	public double getDni(){
 		return dni;
 	}
 
@@ -453,16 +453,16 @@ public class Current{
 	 *
 	 * @param uv the uv
 	 */
-	public void setUv(Object uv){
+	public void setUv(double uv){
 		this.uv = uv;
 	}
 
 	/**
-	 * Get uv object.
+	 * Get uv double.
 	 *
-	 * @return the object
+	 * @return the double
 	 */
-	public Object getUv(){
+	public double getUv(){
 		return uv;
 	}
 
@@ -489,16 +489,16 @@ public class Current{
 	 *
 	 * @param heatindexF the heatindex f
 	 */
-	public void setHeatindexF(Object heatindexF){
+	public void setHeatindexF(double heatindexF){
 		this.heatindexF = heatindexF;
 	}
 
 	/**
-	 * Get heatindex f object.
+	 * Get heatindex f double.
 	 *
-	 * @return the object
+	 * @return the double
 	 */
-	public Object getHeatindexF(){
+	public double getHeatindexF(){
 		return heatindexF;
 	}
 
@@ -507,16 +507,16 @@ public class Current{
 	 *
 	 * @param dewpointC the dewpoint c
 	 */
-	public void setDewpointC(Object dewpointC){
+	public void setDewpointC(double dewpointC){
 		this.dewpointC = dewpointC;
 	}
 
 	/**
-	 * Get dewpoint c object.
+	 * Get dewpoint c double.
 	 *
-	 * @return the object
+	 * @return the double
 	 */
-	public Object getDewpointC(){
+	public double getDewpointC(){
 		return dewpointC;
 	}
 
@@ -525,16 +525,16 @@ public class Current{
 	 *
 	 * @param diffRad the diff rad
 	 */
-	public void setDiffRad(Object diffRad){
+	public void setDiffRad(double diffRad){
 		this.diffRad = diffRad;
 	}
 
 	/**
-	 * Get diff rad object.
+	 * Get diff rad double.
 	 *
-	 * @return the object
+	 * @return the double
 	 */
-	public Object getDiffRad(){
+	public double getDiffRad(){
 		return diffRad;
 	}
 
@@ -561,16 +561,16 @@ public class Current{
 	 *
 	 * @param precipIn the precip in
 	 */
-	public void setPrecipIn(Object precipIn){
+	public void setPrecipIn(double precipIn){
 		this.precipIn = precipIn;
 	}
 
 	/**
-	 * Get precip in object.
+	 * Get precip in double.
 	 *
-	 * @return the object
+	 * @return the double
 	 */
-	public Object getPrecipIn(){
+	public double getPrecipIn(){
 		return precipIn;
 	}
 
@@ -579,16 +579,16 @@ public class Current{
 	 *
 	 * @param heatindexC the heatindex c
 	 */
-	public void setHeatindexC(Object heatindexC){
+	public void setHeatindexC(double heatindexC){
 		this.heatindexC = heatindexC;
 	}
 
 	/**
-	 * Get heatindex c object.
+	 * Get heatindex c double.
 	 *
-	 * @return the object
+	 * @return the double
 	 */
-	public Object getHeatindexC(){
+	public double getHeatindexC(){
 		return heatindexC;
 	}
 
@@ -615,16 +615,16 @@ public class Current{
 	 *
 	 * @param gustMph the gust mph
 	 */
-	public void setGustMph(Object gustMph){
+	public void setGustMph(double gustMph){
 		this.gustMph = gustMph;
 	}
 
 	/**
-	 * Get gust mph object.
+	 * Get gust mph double.
 	 *
-	 * @return the object
+	 * @return the double
 	 */
-	public Object getGustMph(){
+	public double getGustMph(){
 		return gustMph;
 	}
 
@@ -633,16 +633,16 @@ public class Current{
 	 *
 	 * @param pressureIn the pressure in
 	 */
-	public void setPressureIn(Object pressureIn){
+	public void setPressureIn(double pressureIn){
 		this.pressureIn = pressureIn;
 	}
 
 	/**
-	 * Get pressure in object.
+	 * Get pressure in double.
 	 *
-	 * @return the object
+	 * @return the double
 	 */
-	public Object getPressureIn(){
+	public double getPressureIn(){
 		return pressureIn;
 	}
 
@@ -651,16 +651,16 @@ public class Current{
 	 *
 	 * @param gustKph the gust kph
 	 */
-	public void setGustKph(Object gustKph){
+	public void setGustKph(double gustKph){
 		this.gustKph = gustKph;
 	}
 
 	/**
-	 * Get gust kph object.
+	 * Get gust kph double.
 	 *
-	 * @return the object
+	 * @return the double
 	 */
-	public Object getGustKph(){
+	public double getGustKph(){
 		return gustKph;
 	}
 
@@ -687,16 +687,16 @@ public class Current{
 	 *
 	 * @param precipMm the precip mm
 	 */
-	public void setPrecipMm(Object precipMm){
+	public void setPrecipMm(double precipMm){
 		this.precipMm = precipMm;
 	}
 
 	/**
-	 * Get precip mm object.
+	 * Get precip mm double.
 	 *
-	 * @return the object
+	 * @return the double
 	 */
-	public Object getPrecipMm(){
+	public double getPrecipMm(){
 		return precipMm;
 	}
 
@@ -705,16 +705,16 @@ public class Current{
 	 *
 	 * @param shortRad the short rad
 	 */
-	public void setShortRad(Object shortRad){
+	public void setShortRad(double shortRad){
 		this.shortRad = shortRad;
 	}
 
 	/**
-	 * Get short rad object.
+	 * Get short rad double.
 	 *
-	 * @return the object
+	 * @return the double
 	 */
-	public Object getShortRad(){
+	public double getShortRad(){
 		return shortRad;
 	}
 
@@ -759,16 +759,16 @@ public class Current{
 	 *
 	 * @param visKm the vis km
 	 */
-	public void setVisKm(Object visKm){
+	public void setVisKm(double visKm){
 		this.visKm = visKm;
 	}
 
 	/**
-	 * Get vis km object.
+	 * Get vis km double.
 	 *
-	 * @return the object
+	 * @return the double
 	 */
-	public Object getVisKm(){
+	public double getVisKm(){
 		return visKm;
 	}
 
@@ -795,16 +795,16 @@ public class Current{
 	 *
 	 * @param pressureMb the pressure mb
 	 */
-	public void setPressureMb(Object pressureMb){
+	public void setPressureMb(double pressureMb){
 		this.pressureMb = pressureMb;
 	}
 
 	/**
-	 * Get pressure mb object.
+	 * Get pressure mb double.
 	 *
-	 * @return the object
+	 * @return the double
 	 */
-	public Object getPressureMb(){
+	public double getPressureMb(){
 		return pressureMb;
 	}
 
@@ -813,16 +813,16 @@ public class Current{
 	 *
 	 * @param visMiles the vis miles
 	 */
-	public void setVisMiles(Object visMiles){
+	public void setVisMiles(double visMiles){
 		this.visMiles = visMiles;
 	}
 
 	/**
-	 * Get vis miles object.
+	 * Get vis miles double.
 	 *
-	 * @return the object
+	 * @return the double
 	 */
-	public Object getVisMiles(){
+	public double getVisMiles(){
 		return visMiles;
 	}
 
