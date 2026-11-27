@@ -1,6 +1,7 @@
 package com.teamProj.restfulNews;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.teamProj.entity.AttireResponse;
 import com.teamProj.entity.Current;
 import com.teamProj.entity.CurrentWeather;
 import com.teamProj.entity.Location;
@@ -117,17 +118,9 @@ public class Weather {
     @Path("/attire")
     @Produces(MediaType.APPLICATION_JSON)
     public Response getAttire() {
-
         CurrentWeather weather = getValidWeatherData();
-        String suggestion = service.getAttireSuggestion(weather);
-
-        Map<String, Object> result = new LinkedHashMap<>();
-        result.put("zip_code", weather.getLocation() != null ? weather.getLocation().getName() : zipCode);
-        result.put("temp_f", weather.getCurrent().getTempF());
-        result.put("condition", weather.getCurrent().getCondition() != null ? weather.getCurrent().getCondition().getText() : "Unknown");
-        result.put("attire_suggestion", suggestion);
-
-        return toJsonResponse(result);
+        AttireResponse attire = service.getAttireRecommendation(weather, zipCode);
+        return Response.ok(attire).build();
     }
 
     private Response toJsonResponse(Object data) {
