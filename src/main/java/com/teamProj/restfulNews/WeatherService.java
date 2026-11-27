@@ -1,46 +1,51 @@
 package com.teamProj.restfulNews;
 
+import com.teamProj.entity.AttireResponse;
 import com.teamProj.entity.Current;
 import com.teamProj.entity.CurrentWeather;
+import com.teamProj.entity.TemperatureBracket;
+import com.teamProj.entity.WeatherConditionGear;
 
+/**
+ * Service class responsible for evaluating weather conditions and generating structured
+ * attire recommendations using domain enums.
+ */
 public class WeatherService {
 
-    public String getAttireSuggestion(CurrentWeather weather) {
-
-        if (weather == null || weather.getCurrent() == null) {
-            return "No weather data available to suggest attire.";
-        }
-
+    /**
+     * Generates an {@link AttireResponse} based on current temperature and weather conditions.
+     *
+     * @param weather         the validated {@link CurrentWeather} data
+     * @param fallbackZipcode ZIP code to use if the location name is unavailable
+     * @return                structured {@link AttireResponse} object
+     */
+    public AttireResponse getAttireRecommendation(CurrentWeather weather, String fallbackZipcode) {
         Current current = weather.getCurrent();
-        double tempF = ((Number) (current.getFeelslikeF() != null
+        String locationName = (weather.getLocation()) != null && weather.getLocation().getName() != null
+                ? weather.getLocation().getName()
+                : fallbackZipcode;
+
+        Double effectiveTempF = (current.getFeelslikeF() != null)
                 ? current.getFeelslikeF()
-                : current.getTempF())).doubleValue();
-        String condition = (current.getCondition() != null && current.getCondition().getText() != null)
-                ? current.getCondition().getText().toLowerCase()
-                : "";
+                : current.getTempF();
 
-        StringBuilder advice = new StringBuilder();
+        String conditionText = (current.getCondition() != null && current.getCondition().getText() != null)
+                ? current.getCondition().getText()
+                : "Unknown";
 
-        if (tempF < 32) {
-            advice.append("Heavy winter coat, gloves, hat, and warm layers.");
-        } else if (tempF < 50) {
-            advice.append("Warm jacket or coat, long pants, and closed-toe shoes.");
-        } else if (tempF < 68) {
-            advice.append("Light jacket, sweater, or long-sleeve shirt.");
-        } else if (tempF < 82) {
-            advice.append("T-shirt or light top with pants or shorts.");
-        } else {
-            advice.append("Lightweight, breathable clothing and shorts.");
-        }
+        TemperatureBracket bracket = (effectiveTempF != null)
+                ? TemperatureBracket.fromTemperature(effectiveTempF)
+                : TemperatureBracket.MILD;
 
-        if (condition.contains("rain") || condition.contains("drizzle") || condition.contains("shower")) {
-            advice.append("  Bring an umbrella or rain jacket.");
-        } else if (condition.contains("snow") || condition.contains("sleet")) {
-            advice.append("  Wear waterproof snow boots.");
-        } else if (condition.contains("sunny") || condition.contains("clear")) {
-            advice.append("  Sunglasses and sunscreen recommended.");
-        }
+        WeatherConditionGear gear = WeatherConditionGear.fromCondition(conditionText);
 
-        return advice.toString();
+        return new AttireResponse(
+                locationName,
+                current.getTempF(),
+                conditionText,
+                bracket,
+                bracket.getRecommendedItems(),
+                gear.getGearItems()
+        );
     }
 }
