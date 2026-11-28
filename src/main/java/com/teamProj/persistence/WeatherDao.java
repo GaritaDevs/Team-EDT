@@ -33,7 +33,6 @@ public class WeatherDao implements PropertiesLoader {
         } catch (Exception e) {
             logger.error("Failed to load weather properties in WeatherDao: " + e.getMessage());
         }
-        logger.info("Weather API Key: " + weatherApiKey + ", API URL: " + weatherApiUrl);
     }
 
     /**
