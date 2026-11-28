@@ -9,10 +9,27 @@ But what makes our web service truly stand out is that we provide actionable, re
 Client applications won't have to parse massive third-party payloads or build decision-making logic from scratch.
 Instead, our API evaluates live meteorological factors — such as feels-like temperature and active weather conditions — and translates them directly into tailored attire suggestions.
 
-## Resources 
+## API Scope: Resources, Operations & Response Types
 
-- Weather API: https://teams.public.onecdn.static.microsoft/evergreen-assets/safelinks/2/atp-safelinks.html
-- Dependency Management: Maven
-- Logging: Log4J2
-- Unit Testing: JUnit tests to cover all testable logic
-- IDE: IntelliJ IDEA
+**Base URL:** `/Team_EDT_war/api`  
+**Interactive Swagger UI Documentation:** `/Team_EDT_war/` (OpenAPI JSON spec: `/Team_EDT_war/api/openapi.json`)  
+**Authentication:** None required
+
+| Resource | Operation | Path Parameter | Description | Response Type |
+| :--- | :--- | :--- | :--- | :--- |
+| `/weather/current/{zipcode}` | `GET` | `zipcode` (5-digit US ZIP) | Returns the complete current weather and location payload (`CurrentWeather`). | `application/json` |
+| `/weather/current/{zipcode}/location` | `GET` | `zipcode` (5-digit US ZIP) | Returns geographic coordinates, region, country, and local time (`Location`). | `application/json` |
+| `/weather/current/{zipcode}/temperature` | `GET` | `zipcode` (5-digit US ZIP) | Returns Fahrenheit/Celsius temperatures, feels-like temp, humidity, and condition text (`TemperatureResponse`). | `application/json` |
+| `/weather/current/{zipcode}/wind` | `GET` | `zipcode` (5-digit US ZIP) | Returns wind speed (MPH/KPH), direction, gusts, and precipitation (`WindResponse`). | `application/json` |
+| `/weather/current/{zipcode}/attire` | `GET` | `zipcode` (5-digit US ZIP) | Returns weather context alongside structured clothing and gear recommendations (`AttireResponse`). | `application/json` |
+
+### Error Handling
+If a ZIP code cannot be found or the upstream weather provider returns no data, the service responds with HTTP `404 Not Found` (`application/json`):
+```json
+{
+  "error": "Weather data not found for ZIP code: 00000"
+}
+```
+
+### Data Source & Attribution
+Real-time weather data is powered by [WeatherAPI.com](https://weatherapi.com).

@@ -1,122 +1,38 @@
-<%@ page contentType="text/html;charset=UTF-8" %>
+<%@ page contentType="text/html;charset=UTF-8" isELIgnored="false" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather &amp; Attire API — Consumer Guide</title>
+    <title>Weather &amp; Attire Recommendation API - Documentation</title>
+    <link rel="stylesheet" href="https://unpkg.com/swagger-ui-dist@5.17.14/swagger-ui.css" />
     <style>
-        table {
-            border-collapse: collapse;
-            width: 100%;
+        body { margin: 0; padding: 0; font-family: sans-serif; }
+        .attribution-footer {
             text-align: center;
-        }
-        th, td {
-            border: 1px solid black;
-            padding: 8px;
+            padding: 20px;
+            color: #555;
+            font-size: 14px;
+            border-top: 1px solid #eee;
+            margin-top: 30px;
         }
     </style>
 </head>
 <body>
+<div id="swagger-ui"></div>
 
-<h1>Weather &amp; Attire Recommendation API</h1>
-<p>
-    A RESTful web service providing real-time weather conditions and automated attire recommendations
-    for any valid US ZIP code. All endpoints return structured <code>application/json</code> responses.
-</p>
+<footer class="attribution-footer">
+    Weather data provided by <a href="https://weatherapi.com" target="_blank" rel="noopener noreferrer">WeatherAPI.com</a>
+</footer>
 
-<div>
-    <strong>Base URL:</strong> <code>${pageContext.request.contextPath}/api</code><br>
-</div>
-
-<h2>Authentication &amp; Headers</h2>
-<ul>
-    <li><strong>Authentication:</strong> None required for consumers.</li>
-    <li><strong>Response Format:</strong> <code>Content-Type: application/json</code></li>
-</ul>
-
-<h2>Path Parameters</h2>
-<table>
-    <thead>
-    <tr>
-        <th>Parameter</th>
-        <th>Type</th>
-        <th>Description</th>
-        <th>Example</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-        <td><code>{location}</code></td>
-        <td>String</td>
-        <td>5-digit US ZIP code.</td>
-        <td>53704</td>
-    </tr>
-    </tbody>
-</table>
-
-<h2>Available Endpoints</h2>
-<table>
-    <thead>
-    <tr>
-        <th>Method</th>
-        <th>Endpoint</th>
-        <th>Description</th>
-        <th>Live Test</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-        <td>GET</td>
-        <td><code>/api/current/{location}</code></td>
-        <td>Returns the complete current weather and location payload.</td>
-        <td><a href="${pageContext.request.contextPath}/api/current/53704" target="_blank">Open in New Tab</a></td>
-    </tr>
-    <tr>
-        <td>GET</td>
-        <td><code>/api/current/{location}/location</code></td>
-        <td>Returns geographic coordinates, region, country, and local time.</td>
-        <td><a href="${pageContext.request.contextPath}/api/current/53704/location" target="_blank">Open in New Tab</a></td>
-    </tr>
-    <tr>
-        <td>GET</td>
-        <td><code>/api/current/{location}/temperature</code></td>
-        <td>Returns Fahrenheit/Celsius temperatures, feels-like temp, humidity, and condition text.</td>
-        <td><a href="${pageContext.request.contextPath}/api/current/53704/temperature" target="_blank">Open in New Tab</a></td>
-    </tr>
-    <tr>
-        <td>GET</td>
-        <td><code>/api/current/{location}/wind</code></td>
-        <td>Returns wind speed (MPH/KPH), direction, gusts, and precipitation.</td>
-        <td><a href="${pageContext.request.contextPath}/api/current/53704/wind" target="_blank">Open in New Tab</a></td>
-    </tr>
-    <tr>
-        <td>GET</td>
-        <td><code>/api/current/{location}/attire</code></td>
-        <td>Returns a weather summary alongside clothing recommendations based on feels-like temperature and conditions.</td>
-        <td><a href="${pageContext.request.contextPath}/api/current/53704/attire" target="_blank">Open in New Tab</a></td>
-    </tr>
-    </tbody>
-</table>
-
-<h2>Example Request &amp; Response</h2>
-<h3>Request</h3>
-<pre>GET ${pageContext.request.contextPath}/api/current/53704/attire
-Accept: application/json</pre>
-
-<h3>Success Response (<code>200 OK</code>)</h3>
-<pre>{
-  "location": "Madison",
-  "temp_f": 42.0,
-  "condition": "Light rain",
-  "attire_suggestion": "Warm jacket or coat, long pants, and closed-toe shoes.  Bring an umbrella or rain jacket."
-}</pre>
-
-<h2>Error Handling</h2>
-<p>If a location cannot be found or the upstream weather provider returns no data, the service responds with an HTTP <code>404 Not Found</code> JSON object:</p>
-<pre>{
-  "error": "Weather data not found for location: 00000"
-}</pre>
-
+<script src="https://unpkg.com/swagger-ui-dist@5.17.14/swagger-ui-bundle.js"></script>
+<script>
+    window.onload = function () {
+        window.ui = SwaggerUIBundle({
+            url: '${pageContext.request.contextPath}/api/openapi.json',
+            dom_id: '#swagger-ui',
+            deepLinking: true
+        });
+    };
+</script>
 </body>
 </html>
