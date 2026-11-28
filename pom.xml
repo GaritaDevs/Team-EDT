@@ -16,6 +16,7 @@
     <servlet-version-c>1.2</servlet-version-c>
     <log4j-version>2.17.1</log4j-version>
     <junit-version>3.8.1</junit-version>
+    <swagger-version>2.2.25</swagger-version>
   </properties>
 
   <dependencies>
@@ -83,6 +84,11 @@
       <groupId>com.fasterxml.jackson.core</groupId>
       <artifactId>jackson-databind</artifactId>
       <version>${jackson-version}</version>
+    </dependency>
+    <dependency>
+      <groupId>io.swagger.core.v3</groupId>
+      <artifactId>swagger-jaxrs2</artifactId>
+      <version>${swagger-version}</version>
     </dependency>
   </dependencies>
   <build>
